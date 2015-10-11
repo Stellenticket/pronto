@@ -58,6 +58,7 @@ module Pronto
           pull_id.to_i
         elsif @repo.branch
           pull = pull_requests.find { |pr| pr[:head][:ref] == @repo.branch }
+          # pull[:repo][:git_url]
           pull[:number].to_i if pull
         end
       end
